@@ -1,0 +1,9 @@
+h1 {
+    background-color: lightcoral;
+    text-align: center;
+}
+
+input {
+    border-color: aqua;
+    border-style: groove;
+}

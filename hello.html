@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./hello.css" />
+</head>
+
+<body>
+  <h1>QuickCalc</h1>
+
+  <!-- /* Radio buttons to choose expression */ -->
+  <div id="radio-buttons">
+    <input type="radio" id="addition" name="group1" value="add" />
+    <label for="add">addition(+)</label> <br />
+    <input type="radio" id="subtraction" name="group1" value="subtract" />
+    <label for="sub">subtraction(-)</label> <br />
+    <input type="radio" id="factorial" name="group1" value="factorial" />
+    <label for="fact">factorial(n!)</label> <br />
+    <input type="radio" id="kPermutations" name="group1" value="kPermutations" />
+    <label for="fact">kPermutations( n! / (n-k)! )</label> <br />
+    <div />
+    <!-- /* Additional Input for certain formulas | Hidden by default */ -->
+    <div class="in3" style="visibility:hidden">
+      <input type="text" placeholder="input3" id="thirdNumber" />
+    </div>
+    <!-- /*Input Field 1*/ -->
+    <div class="in1" style="visibility:visible">
+      <input type="text" placeholder="input1" id="firstNumber" />
+    </div>
+    <!-- /*Input Field 2*/ -->
+    <div class="in2" style="visibility:visible">
+      <input type="text" placeholder="input2" id="secondNumber" />
+    </div>
+    <!-- /*Calculate Button*/ -->
+    <button id="Calculate">Calculate</button>
+    <!-- /*Answer Div*/ -->
+    <div class="res">
+      <p id="ans"></p>
+    </div>
+    <script src="./test.js" type="module"></script>
+</body>
+
+</html>

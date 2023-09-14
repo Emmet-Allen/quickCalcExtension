@@ -1,0 +1,77 @@
+//Number Inputs
+let firstNumber = document.getElementById("firstNumber");
+let secondNumber = document.getElementById("secondNumber");
+let thirdNumber = document.getElementById("thirdNumber");
+
+//Number Values
+let firstValue = parseInt(firstNumber.value);
+let secondValue = parseInt(secondNumber.value);
+let thirdVaile = parseInt(thirdNumber.value);
+
+// Calculate Button
+const calculate = document.getElementById("Calculate");
+
+// Math Formula Named Radio Buttons
+let subtract = document.getElementById("subtraction");
+let addition = document.getElementById("addition");
+let factorial = document.getElementById("factorial");
+
+//Input Boxes
+let secondInput = document.getElementById("secondNumber")
+let thirdInput = document.getElementById("thirdNumber")
+
+//Hide buttons via async function
+factorial.addEventListener("click", async () => {
+    secondInput.style.visibility = 'hidden';
+    thirdInput.style.visibility = 'hidden';
+});
+
+addition.addEventListener("click", async () => {
+    thirdNumber.style.visibility = 'hidden';
+    secondInput.style.visibility = 'visible';
+});
+
+subtract.addEventListener("click", async () => {
+    thirdNumber.style.visibility = 'hidden';
+    secondInput.style.visibility = 'visible';
+});
+
+//Event Listener To Calculate Formula with given inputs
+calculate.addEventListener("click", operation);
+
+// Checks which Formula was choosen and performs calculation
+async function operation() {
+    if (addition.checked) {
+        addNumbers();
+    }
+    if (subtract.checked) {
+        subNumbers();
+    }
+    if (factorial.checked) {
+        factorialNumbers();
+    }
+}
+
+function addNumbers() {
+    let solution = parseInt(firstNumber.value) + parseInt(secondNumber.value);
+    return displayResult(solution);
+}
+
+function subNumbers() {
+    let solution = parseInt(firstNumber.value) - parseInt(secondNumber.value);
+    return displayResult(solution);
+}
+
+function factorialNumbers(){
+    let solution = 1;
+    let number = parseInt(firstNumber.value); 
+    while(number > 0){
+        solution *= number;
+        number--;
+    }
+    return (document.getElementById("ans").textContent = "Result is " + solution);
+}
+
+function displayResult(solution){
+    return (document.getElementById("ans").textContent = "Result is " + solution);
+}

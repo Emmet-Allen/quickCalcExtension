@@ -79,11 +79,6 @@ euclidTriple.addEventListener("click", async () => {
     secondInput.style.visibility = 'visible';
 });
 
-permutation.addEventListener("click", async () => {
-    thirdNumber.style.visibility = 'hidden';
-    secondInput.style.visibility = 'visible';
-});
-
 //Event Listener To Calculate Formula with given inputs
 calculate.addEventListener("click", operation);
 
@@ -123,7 +118,6 @@ async function operation() {
     if(euclidTriple.checked){
         solution = euclidTripleFunc(parseInt(firstNumber.value), parseInt(secondNumber.value));
     }
-    
 
     return displayResult(solution);
 }

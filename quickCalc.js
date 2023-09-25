@@ -214,6 +214,9 @@ function euclidTripleFunc(valueM, valueN){
 
 // Displays result
 function displayResult(solution) {
+    firstNumber.value = "";
+    secondNumber.value = "";
+    thirdNumber.value = "";
     return (document.getElementById("ans").textContent = "Result is " + solution);
 }
 

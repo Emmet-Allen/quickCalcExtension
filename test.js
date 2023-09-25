@@ -12,6 +12,7 @@ let addition = document.getElementById("addition");
 let division = document.getElementById("division");
 let multiplication = document.getElementById("multiplication");
 let factorial = document.getElementById("factorial");
+let permutation = document.getElementById("permutations")
 let kPermutation = document.getElementById("kPermutations");
 let greatestCD = document.getElementById("GCD");
 let arithmeticSeries = document.getElementById("ArithmeticSeries");
@@ -48,6 +49,11 @@ factorial.addEventListener("click", async () => {
     thirdInput.style.visibility = 'hidden';
 });
 
+permutation.addEventListener("click", async () => {
+    thirdNumber.style.visibility = 'hidden';
+    secondInput.style.visibility = 'visible';
+});
+
 kPermutation.addEventListener("click", async () => {
     secondInput.style.visibility = 'visible';
     thirdInput.style.visibility = 'hidden';
@@ -73,6 +79,11 @@ euclidTriple.addEventListener("click", async () => {
     secondInput.style.visibility = 'visible';
 });
 
+permutation.addEventListener("click", async () => {
+    thirdNumber.style.visibility = 'hidden';
+    secondInput.style.visibility = 'visible';
+});
+
 //Event Listener To Calculate Formula with given inputs
 calculate.addEventListener("click", operation);
 
@@ -94,6 +105,9 @@ async function operation() {
     if (factorial.checked) {
         solution = factorialFunc(parseInt(firstNumber.value));
     }
+    if(permutation.checked){
+        solution = permutationFunc(parseInt(firstNumber.value), parseInt(secondNumber.value));
+    }
     if (kPermutation.checked) {
         solution = kPermutationNumbers(parseInt(firstNumber.value), parseInt(secondNumber.value));
     }
@@ -109,6 +123,7 @@ async function operation() {
     if(euclidTriple.checked){
         solution = euclidTripleFunc(parseInt(firstNumber.value), parseInt(secondNumber.value));
     }
+    
 
     return displayResult(solution);
 }
@@ -141,6 +156,11 @@ function factorialFunc(value) {
         solution *= number;
         number--;
     }
+    return solution;
+}
+
+function permutationFunc(valueA, valueB) {
+    let solution = Math.pow(valueA, valueB);
     return solution;
 }
 

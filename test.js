@@ -12,6 +12,7 @@ let addition = document.getElementById("addition");
 let division = document.getElementById("division");
 let multiplication = document.getElementById("multiplication");
 let factorial = document.getElementById("factorial");
+let permutation = document.getElementById("permutations")
 let kPermutation = document.getElementById("kPermutations");
 let greatestCD = document.getElementById("GCD");
 let arithmeticSeries = document.getElementById("ArithmeticSeries");
@@ -46,6 +47,11 @@ division.addEventListener("click", async () => {
 factorial.addEventListener("click", async () => {
     secondInput.style.visibility = 'hidden';
     thirdInput.style.visibility = 'hidden';
+});
+
+permutation.addEventListener("click", async () => {
+    thirdNumber.style.visibility = 'hidden';
+    secondInput.style.visibility = 'visible';
 });
 
 kPermutation.addEventListener("click", async () => {
@@ -94,6 +100,9 @@ async function operation() {
     if (factorial.checked) {
         solution = factorialFunc(parseInt(firstNumber.value));
     }
+    if(permutation.checked){
+        solution = permutationFunc(parseInt(firstNumber.value), parseInt(secondNumber.value));
+    }
     if (kPermutation.checked) {
         solution = kPermutationNumbers(parseInt(firstNumber.value), parseInt(secondNumber.value));
     }
@@ -141,6 +150,11 @@ function factorialFunc(value) {
         solution *= number;
         number--;
     }
+    return solution;
+}
+
+function permutationFunc(valueA, valueB) {
+    let solution = Math.pow(valueA, valueB);
     return solution;
 }
 

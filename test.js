@@ -14,14 +14,15 @@ let multiplication = document.getElementById("multiplication");
 let factorial = document.getElementById("factorial");
 let kPermutation = document.getElementById("kPermutations");
 let greatestCD = document.getElementById("GCD");
-let arithmeticSeries = document.getElementById("ArithmeticSeries")
-let arithmeticSequence = document.getElementById("ArithmeticSequence")
+let arithmeticSeries = document.getElementById("ArithmeticSeries");
+let arithmeticSequence = document.getElementById("ArithmeticSequence");
+let euclidTriple = document.getElementById("EuclidsTriple");
 
 //Input Boxes
-let secondInput = document.getElementById("secondNumber")
-let thirdInput = document.getElementById("thirdNumber")
+let secondInput = document.getElementById("secondNumber");
+let thirdInput = document.getElementById("thirdNumber");
 
-//Hide buttons via async function
+//Hide input via async function
 addition.addEventListener("click", async () => {
     thirdNumber.style.visibility = 'hidden';
     secondInput.style.visibility = 'visible';
@@ -31,6 +32,7 @@ subtract.addEventListener("click", async () => {
     thirdNumber.style.visibility = 'hidden';
     secondInput.style.visibility = 'visible';
 });
+
 multiplication.addEventListener("click", async () => {
     thirdNumber.style.visibility = 'hidden';
     secondInput.style.visibility = 'visible';
@@ -66,6 +68,10 @@ arithmeticSequence.addEventListener("click", async () => {
     thirdInput.style.visibility = 'visible';
 });
 
+euclidTriple.addEventListener("click", async () => {
+    thirdNumber.style.visibility = 'hidden';
+    secondInput.style.visibility = 'visible';
+});
 
 //Event Listener To Calculate Formula with given inputs
 calculate.addEventListener("click", operation);
@@ -100,10 +106,14 @@ async function operation() {
     if(arithmeticSequence.checked){
         solution = arithmeticSeqFunc(parseInt(firstNumber.value), parseInt(secondNumber.value), parseInt(thirdNumber.value));
     }
+    if(euclidTriple.checked){
+        solution = euclidTripleFunc(parseInt(firstNumber.value), parseInt(secondNumber.value));
+    }
+
     return displayResult(solution);
 }
 
-
+// Functions for formulas
 function addNumbers() {
     let solution = parseInt(firstNumber.value) + parseInt(secondNumber.value);
     return solution;
@@ -179,6 +189,16 @@ function arithmeticSeqFunc(valueA, valueB, valueN){
     return solution;
 }
 
+function euclidTripleFunc(valueM, valueN){
+    let solution = [];
+    let a = valueM * valueN;
+    let b = (Math.pow(valueM, 2) - Math.pow(valueN, 2)) / 2;
+    let c = (Math.pow(valueM, 2) + Math.pow(valueN, 2)) / 2;
+    solution.push(a, b, c);
+    return solution;
+}
+
+// Displays result
 function displayResult(solution) {
     return (document.getElementById("ans").textContent = "Result is " + solution);
 }

@@ -13,28 +13,36 @@
 
   <!-- /* Radio buttons to choose expression */ -->
   <div id="radio-buttons">
+    <input type="radio" id="addition" name="group1" value="add" />
+    <label for="add">addition(a+b)</label> <br />
+    <input type="radio" id="subtraction" name="group1" value="subtract" />
+    <label for="sub">subtraction(a-b)</label> <br />
     <input type="radio" id="multiplication" name="group1" value="multi" />
-    <label for="multi">multiplication(*)</label> <br />
+    <label for="multi">multiplication(a*b)</label> <br />
     <input type="radio" id="division" name="group1" value="divide" />
-    <label for="div">division(/)</label> <br />
+    <label for="div">division(a/b)</label> <br />
     <input type="radio" id="factorial" name="group1" value="factorial" />
     <label for="fact">factorial(n!)</label> <br />
     <input type="radio" id="kPermutations" name="group1" value="kPermutations" />
-    <label for="kPerm">kPermutations( n! / (n-k)! )</label> <br />
+    <label for="kPerm">kPermutations(n! / (n-k)!)</label> <br />
     <input type="radio" id="GCD" name="group1" value="GCD" />
     <label for="Euclid">Eculid's GCD</label> <br />
+    <input type="radio" id="ArithmeticSeries" name="group1" value="ArithmeticSeries" />
+    <label for="ArithSr">Arithmetic Series</label> <br />
+    <input type="radio" id="ArithmeticSequence" name="group1" value="ArithmeticSequence" />
+    <label for="ArithSq">Arithmetic Sequence</label> <br />
     <div />
     <!-- /* Additional Input for certain formulas | Hidden by default */ -->
-    <div class="in3" style="visibility:hidden">
-      <input type="text" placeholder="input3" id="thirdNumber" />
-    </div>
     <!-- /*Input Field 1*/ -->
     <div class="in1" style="visibility:visible">
-      <input type="text" placeholder="input1" id="firstNumber" />
+      <input type="text" placeholder="n,a" id="firstNumber" />
     </div>
     <!-- /*Input Field 2*/ -->
     <div class="in2" style="visibility:visible">
-      <input type="text" placeholder="input2" id="secondNumber" />
+      <input type="text" placeholder="k,b" id="secondNumber" />
+    </div>
+    <div class="in3" style="visibility:hidden">
+      <input type="text" placeholder="r" id="thirdNumber" />
     </div>
     <!-- /*Calculate Button*/ -->
     <button id="Calculate">Calculate</button>

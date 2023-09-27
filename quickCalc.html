@@ -11,58 +11,51 @@
 <body>
   <div class="title">
     <h1>QuickCalc</h1>
-  </div>
+</div>
 
-  <div class="contentBody">
-
-    <!-- /* Radio buttons to choose expression */ -->
-    <div id="radio-buttons">
-      <input type="radio" id="addition" name="group1" value="add" />
-      <label for="add">Addition(a+b)</label> <br />
-      <input type="radio" id="subtraction" name="group1" value="subtract" />
-      <label for="sub">Subtraction(a-b)</label> <br />
-      <input type="radio" id="multiplication" name="group1" value="multi" />
-      <label for="multi">Multiplication(a*b)</label> <br />
-      <input type="radio" id="division" name="group1" value="divide" />
-      <label for="div">Division(a/b)</label> <br />
-      <input type="radio" id="factorial" name="group1" value="factorial" />
-      <label for="fact">Factorial(n!)</label> <br />
-      <input type="radio" id="permutations" name="group1" value="permutations" />
-      <label for="Perm">Permutations(a^b)</label> <br />
-      <input type="radio" id="kPermutations" name="group1" value="kPermutations " />
-      <label for="kPerm">k-Permutations(n! / (n-k)!)</label> <br />
-      <input type="radio" id="GCD" name="group1" value="GCD" />
-      <label for="Eculid">Eculid's GCD</label> <br />
-      <input type="radio" id="ArithmeticSeries" name="group1" value="ArithmeticSeries" />
-      <label for="ArithSr">Arithmetic Series</label> <br />
-      <input type="radio" id="ArithmeticSequence" name="group1" value="ArithmeticSequence" />
-      <label for="ArithSq">Arithmetic Sequence</label> <br />
-      <input type="radio" id="EuclidsTriple" name="group1" value="EuclidsTriple" />
-      <label for="triple">Euclid's Triple(a,b : a&gt;b)</label> <br />
-      <div />
-      <!-- /* Additional Input for certain formulas | Hidden by default */ -->
-      <!-- /*Input Field 1*/ -->
-      <div class="in1" style="visibility:visible">
-        <input type="text" placeholder="n,a" id="firstNumber" />
-      </div>
-      <!-- /*Input Field 2*/ -->
-      <div class="in2" style="visibility:visible">
-        <input type="text" placeholder="k,b" id="secondNumber" />
-      </div>
-      <div class="in3" style="visibility:hidden">
-        <input type="text" placeholder="r" id="thirdNumber" />
-      </div>
-
-      <!-- /*Calculate Button*/ -->
-      <div class="calContainer">
-        <button id="Calculate">Calculate</button>
-      </div>      
-      <!-- /*Answer Div*/ --> 
-      <div class="res">
-        <h3 id="ans"></h3>
-      </div>
-
+<div class="contentBody">
+  <!-- /* Radio buttons to choose expression */ -->
+  <div id="radio-buttons">
+    <input type="radio" id="addition" name="group1" value="add" />
+    <label for="add">Addition(a+b)</label> <br />
+    <input type="radio" id="subtraction" name="group1" value="subtract" />
+    <label for="sub">Subtraction(a-b)</label> <br />
+    <input type="radio" id="multiplication" name="group1" value="multi" />
+    <label for="multi">Multiplication(a*b)</label> <br />
+    <input type="radio" id="division" name="group1" value="divide" />
+    <label for="div">Division(a/b)</label> <br />
+    <input type="radio" id="factorial" name="group1" value="factorial" />
+    <label for="fact">Factorial(n!)</label> <br />
+    <input type="radio" id="permutations" name="group1" value="permutations" />
+    <label for="Perm">Permutations(a^b)</label> <br />
+    <input type="radio" id="kPermutations" name="group1" value="kPermutations " />
+    <label for="kPerm">k-Permutations(n! / (n-k)!)</label> <br />
+    <input type="radio" id="GCD" name="group1" value="GCD" />
+    <label for="Eculid">Eculid's GCD</label> <br />
+    <input type="radio" id="ArithmeticSeries" name="group1" value="ArithmeticSeries" />
+    <label for="ArithSr">Arithmetic Series</label> <br />
+    <input type="radio" id="ArithmeticSequence" name="group1" value="ArithmeticSequence" />
+    <label for="ArithSq">Arithmetic Sequence</label> <br />
+    <input type="radio" id="EuclidsTriple" name="group1" value="EuclidsTriple" />
+    <label for="triple">Euclid's Triple(a,b : a&gt;b)</label> <br />
     </div>
+    <!-- /* Additional Input for certain formulas | Hidden by default */ -->
+    <!-- /*Input Field 1,2,3*/ -->
+    <div class="inputs" >
+      <input class="in1"style="visibility:visible"type="text" placeholder="n,a" id="firstNumber" />
+      <input class="in2" style="visibility:visible" type="text" placeholder="k,b" id="secondNumber" />
+      <input class="in3" style="visibility:hidden" style="visibility:hidden"type="text" placeholder="r" id="thirdNumber" />
+    </div>
+    
+    <!-- /*Calculate Button*/ -->
+    <div class="calContainer">
+      <button id="Calculate">Calculate</button>
+    </div>
+    <!-- /*Answer Div*/ -->
+    <div class="res">
+      <h3 id="ans"></h3>
+    </div>
+  </div>
 
     <!-- History Display -->
     <div class="historyLog">

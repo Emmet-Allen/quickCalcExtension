@@ -1,67 +1,66 @@
 * {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-body{
-    border: 0.85rem;
-    border-style: groove;
-    border-color: #04D4F0;
+body {
+  border: 0.85rem;
+  border-style: groove;
+  border-color: #04d4f0;
 }
 
-.contentBody{
-    display: inline;
+.contentBody {
+  display: inline;
 }
 
 .title {
-    background-color: aqua;
-    margin-bottom: 0.5rem;
+  background-color: aqua;
+  margin-bottom: 0.5rem;
 }
 
 h1 {
-    text-align: center;
-    margin: 0 2.6rem;
+  text-align: center;
+  margin: 0 2.6rem;
 }
 
 input {
-    border-color: aqua;
-    border-style: groove;
+  border-color: aqua;
+  border-style: groove;
 }
 
-input[type="radio"]:checked+label {
-    font-weight: bold;
+input[type="radio"]:checked + label {
+  font-weight: bold;
+}
+
+.inputs {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-bottom: 0.25rem;
+  margin-left: 3%;
 }
 
 .in1 {
-    margin-top: 0.7rem;
-    margin-bottom: 0.2rem;
-}
-
-.in2 {
-    margin-bottom: 0.2rem;
-}
-
-.in3 {
-    margin-bottom: 0.5rem;
-
+  margin-top: 0.7rem;
 }
 
 .calContainer {
-    display: flex;
-    flex: center;
+  display: flex;
+  flex: center;
 }
 
 #Calculate {
-    margin: auto;
-    font-weight: bold;
-    font-size: 0.9rem;
-    background-color: rgb(117, 212, 232);
+  margin: auto;
+  font-weight: bold;
+  font-size: 0.9rem;
+  background-color: rgb(117, 212, 232);
 }
 
-.historyLog{
-    display: flex;
-    flex-direction: column;
+.historyLog {
+  display: flex;
+  flex-direction: column;
 }
 
-.historyList{
-    margin-top: -1rem;
+.historyList {
+  margin-top: -1rem;
 }

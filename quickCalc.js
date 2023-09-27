@@ -84,7 +84,21 @@ euclidTriple.addEventListener("click", async () => {
 
 //Event Listener To Calculate Formula with given inputs
 calculate.addEventListener("click", operation);
-// calculate.addEventListener("click", displayHistory);
+
+firstNumber.addEventListener("keydown", (evt) => {
+    if (evt.code === 'Enter')
+        operation();
+});
+
+secondNumber.addEventListener("keydown", (evt) => {
+    if (evt.code === 'Enter')
+        operation();
+});
+
+thirdNumber.addEventListener("keydown", (evt) => {
+    if (evt.code === 'Enter')
+        operation();
+});
 
 // Checks which Formula was choosen and performs calculation
 async function operation() {

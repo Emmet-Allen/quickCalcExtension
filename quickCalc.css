@@ -56,11 +56,21 @@ input[type="radio"]:checked + label {
   background-color: rgb(117, 212, 232);
 }
 
+.res {
+  margin-left: 3%;
+}
+
 .historyLog {
   display: flex;
+  flex: center;
   flex-direction: column;
 }
 
+.historyTitle {
+  margin: auto;
+}
+
 .historyList {
-  margin-top: -1rem;
+  margin-top: -1.6rem;
+  padding: 0.5rem;
 }

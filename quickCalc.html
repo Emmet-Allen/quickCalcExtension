@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./hello.css" />
+  <link rel="stylesheet" href="./quickCalc.css" />
 </head>
 
 <body>
@@ -13,6 +13,7 @@
   <h1>QuickCalc</h1>
   </div>
 
+<div class="contentBody">
   <!-- /* Radio buttons to choose expression */ -->
   <div id="radio-buttons">
     <input type="radio" id="addition" name="group1" value="add" />
@@ -50,13 +51,20 @@
     <div class="in3" style="visibility:hidden">
       <input type="text" placeholder="r" id="thirdNumber" />
     </div>
+    
     <!-- /*Calculate Button*/ -->
     <button id="Calculate">Calculate</button>
     <!-- /*Answer Div*/ -->
     <div class="res">
       <p id="ans"></p>
     </div>
-    <script src="./test.js" type="module"></script>
+  </div>
+
+    <!-- History Display -->
+    <div class="historyLog">
+      <p id="history">History</p>
+    </div>
+    <script src="./quickCalc.js" type="module"></script>
 </body>
 
 </html>

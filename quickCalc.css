@@ -2,8 +2,12 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.contentBody {
+    display: grid-template-columns;
+}
+
 .title {
-    background-color: lightcoral;
+    background-color: aqua;
     margin-bottom: 0.5rem;
 }
 
@@ -30,4 +34,15 @@ input[type="radio"]:checked+label {font-weight: bold;}
 
 .in3{
     margin-bottom: 0.5rem;
+}
+
+#Calculate{
+    font-weight: bold;
+    font-size: 0.9rem;
+    background-color: rgb(117, 212, 232);
+}
+
+.historyLog{
+    display: flex;
+    flex-direction: row;
 }

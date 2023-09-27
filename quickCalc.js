@@ -23,6 +23,9 @@ let euclidTriple = document.getElementById("EuclidsTriple");
 let secondInput = document.getElementById("secondNumber");
 let thirdInput = document.getElementById("thirdNumber");
 
+//Solution History List
+let historyList = [];
+
 //Hide input via async function
 addition.addEventListener("click", async () => {
     thirdNumber.style.visibility = 'hidden';
@@ -81,14 +84,15 @@ euclidTriple.addEventListener("click", async () => {
 
 //Event Listener To Calculate Formula with given inputs
 calculate.addEventListener("click", operation);
+// calculate.addEventListener("click", displayHistory);
 
 // Checks which Formula was choosen and performs calculation
 async function operation() {
-    let solution;
+    let solution = null;
     if (addition.checked) {
         solution = addNumbers();
      }
-     if (subtract.checked) {
+    if (subtract.checked) {
          solution = subNumbers();
      }
     if (multiplication.checked) {
@@ -119,6 +123,12 @@ async function operation() {
         solution = euclidTripleFunc(parseInt(firstNumber.value), parseInt(secondNumber.value));
     }
 
+    console.log(solution);
+    if (solution != null && !isNaN(solution) || Array.isArray(solution)) {
+    historyList.unshift(solution);
+    displayHistory(historyList);
+    }
+
     return displayResult(solution);
 }
 
@@ -144,6 +154,9 @@ function divNumbers() {
 }
 
 function factorialFunc(value) {
+    if (isNaN(value)) {
+        return value;
+    }
     let solution = 1;
     let number = value;
     while (number > 0) {
@@ -214,6 +227,23 @@ function euclidTripleFunc(valueM, valueN){
 
 // Displays result
 function displayResult(solution) {
-    return (document.getElementById("ans").textContent = "Result is " + solution);
+    let result = "Result is";
+    firstNumber.value = "";
+    secondNumber.value = "";
+    thirdNumber.value = "";
+    if (isNaN(solution) && (!Array.isArray(solution))) {
+        result = "";
+        solution = "Please Enter Valid Input(s)";
+    }
+    if (solution == null && (!Array.isArray(solution))) {
+        result = "";
+        solution = "Please Select A Formula";
+    }
+    
+    return (document.getElementById("ans").textContent = result + " " + solution);
 }
 
+// List to store history
+function displayHistory(historyList) {
+    return (document.getElementById("history").textContent = historyList);
+}

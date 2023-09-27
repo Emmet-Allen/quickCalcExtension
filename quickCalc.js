@@ -117,7 +117,7 @@ async function operation() {
         );
     }
     if (greatestCD.checked) {
-        solution = gcdFunc(
+        solution = newGcdFunc(
             parseInt(firstNumber.value),
             parseInt(secondNumber.value)
         );
@@ -144,7 +144,7 @@ async function operation() {
     }
 
     displayResult(solution);
-    
+
     if ((solution != null && !isNaN(solution)) || Array.isArray(solution)) {
         solution = "[" + solution + "]";
         historyList.unshift(solution);
@@ -201,21 +201,28 @@ function kPermutationNumbers(valueN, valueK) {
     return solution;
 }
 
-function gcdFunc(valueA, valueB) {
+function newGcdFunc(valueA, valueB) {
     let a = valueA;
     let b = valueB;
-    if (b == 0) {
-        var solution = a;
-    }
+    let solution = 0;
     if (a == 0) {
-        var solution = b;
-    } else {
-        while (b > 0) {
-            let remainder = valueA % valueB;
-            a = b;
-            b = remainder;
+        solution = b;
+        return solution;
+    }
+    if (b == 0) {
+        solution = a;
+        return solution;
+    }
+    if (a > b || b > a) {
+        while (a != b) {
+            if (a > b) {
+                a = a - b;
+            }
+            if (b > a) {
+                b = b - a;
+            }
         }
-        var solution = a;
+        solution = a;
     }
     return solution;
 }

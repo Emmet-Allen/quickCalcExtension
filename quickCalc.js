@@ -84,7 +84,6 @@ euclidTriple.addEventListener("click", async () => {
 
 //Event Listener To Calculate Formula with given inputs
 calculate.addEventListener("click", operation);
-// calculate.addEventListener("click", displayHistory);
 
 // Checks which Formula was choosen and performs calculation
 async function operation() {
@@ -93,6 +92,15 @@ async function operation() {
         solution = addNumbers();
      }
     if (subtract.checked) {
+
+// Checks which Formula was choosen and performs calculation
+async function operation() {
+    let solution;
+    if (addition.checked) {
+        solution = addNumbers();
+     }
+     if (subtract.checked) {
+
          solution = subNumbers();
      }
     if (multiplication.checked) {
@@ -154,9 +162,11 @@ function divNumbers() {
 }
 
 function factorialFunc(value) {
+
     if (isNaN(value)) {
         return value;
     }
+
     let solution = 1;
     let number = value;
     while (number > 0) {
@@ -227,6 +237,7 @@ function euclidTripleFunc(valueM, valueN){
 
 // Displays result
 function displayResult(solution) {
+
     let result = "Result is";
     firstNumber.value = "";
     secondNumber.value = "";
@@ -247,3 +258,11 @@ function displayResult(solution) {
 function displayHistory(historyList) {
     return (document.getElementById("history").textContent = historyList);
 }
+
+    firstNumber.value = "";
+    secondNumber.value = "";
+    thirdNumber.value = "";
+    return (document.getElementById("ans").textContent = "Result is " + solution);
+}
+
+

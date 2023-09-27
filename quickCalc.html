@@ -54,20 +54,28 @@
       </div>
 
       <!-- /*Calculate Button*/ -->
-      <button id="Calculate">Calculate</button>
-      <!-- /*Answer Div*/ -->
+      <div class="calContainer">
+        <button id="Calculate">Calculate</button>
+      </div>      
+      <!-- /*Answer Div*/ --> 
       <div class="res">
-        <p id="ans"></p>
+        <h3 id="ans"></h3>
       </div>
 
     </div>
 
     <!-- History Display -->
     <div class="historyLog">
-      <p id="history">History</p>
+      <div class="historyTitle">
+        <h4>History</h4>
+      </div>
+      <div class="historyList">
+        <p id="history"></p>
+      </div>
     </div>
+  </div>
 
-    <script src="./quickCalc.js" type="module"></script>
+  <script src="./quickCalc.js" type="module"></script>
 </body>
 
 </html>

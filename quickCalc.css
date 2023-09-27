@@ -2,8 +2,14 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.contentBody {
-    display: grid-template-columns;
+body{
+    border: 0.85rem;
+    border-style: groove;
+    border-color: #04D4F0;
+}
+
+.contentBody{
+    display: inline;
 }
 
 .title {
@@ -39,15 +45,23 @@ input[type="radio"]:checked+label {
 
 }
 
+.calContainer {
+    display: flex;
+    flex: center;
+}
+
 #Calculate {
+    margin: auto;
     font-weight: bold;
     font-size: 0.9rem;
     background-color: rgb(117, 212, 232);
 }
 
-.historyLog {
+.historyLog{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+}
 
-
+.historyList{
+    margin-top: -1rem;
 }

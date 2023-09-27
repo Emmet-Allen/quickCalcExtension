@@ -90,179 +90,178 @@ async function operation() {
     let solution = null;
     if (addition.checked) {
         solution = addNumbers();
-     }
+    }
     if (subtract.checked) {
 
-// Checks which Formula was choosen and performs calculation
-async function operation() {
-    let solution;
-    if (addition.checked) {
-        solution = addNumbers();
-     }
-     if (subtract.checked) {
+        // Checks which Formula was choosen and performs calculation
+        async function operation() {
+            let solution;
+            if (addition.checked) {
+                solution = addNumbers();
+            }
+            if (subtract.checked) {
 
-         solution = subNumbers();
-     }
-    if (multiplication.checked) {
-        solution = multiNumbers();
-    }
-    if (division.checked) {
-        solution = divNumbers();
-    }
-    if (factorial.checked) {
-        solution = factorialFunc(parseInt(firstNumber.value));
-    }
-    if(permutation.checked){
-        solution = permutationFunc(parseInt(firstNumber.value), parseInt(secondNumber.value));
-    }
-    if (kPermutation.checked) {
-        solution = kPermutationNumbers(parseInt(firstNumber.value), parseInt(secondNumber.value));
-    }
-    if (greatestCD.checked) {
-        solution = gcdFunc(parseInt(firstNumber.value), parseInt(secondNumber.value));
-    }
-    if (arithmeticSeries.checked){
-        solution = arithmeticSeriesFunc(parseInt(firstNumber.value), parseInt(secondNumber.value), parseInt(thirdNumber.value));
-    }
-    if(arithmeticSequence.checked){
-        solution = arithmeticSeqFunc(parseInt(firstNumber.value), parseInt(secondNumber.value), parseInt(thirdNumber.value));
-    }
-    if(euclidTriple.checked){
-        solution = euclidTripleFunc(parseInt(firstNumber.value), parseInt(secondNumber.value));
-    }
+                solution = subNumbers();
+            }
+            if (multiplication.checked) {
+                solution = multiNumbers();
+            }
+            if (division.checked) {
+                solution = divNumbers();
+            }
+            if (factorial.checked) {
+                solution = factorialFunc(parseInt(firstNumber.value));
+            }
+            if (permutation.checked) {
+                solution = permutationFunc(parseInt(firstNumber.value), parseInt(secondNumber.value));
+            }
+            if (kPermutation.checked) {
+                solution = kPermutationNumbers(parseInt(firstNumber.value), parseInt(secondNumber.value));
+            }
+            if (greatestCD.checked) {
+                solution = gcdFunc(parseInt(firstNumber.value), parseInt(secondNumber.value));
+            }
+            if (arithmeticSeries.checked) {
+                solution = arithmeticSeriesFunc(parseInt(firstNumber.value), parseInt(secondNumber.value), parseInt(thirdNumber.value));
+            }
+            if (arithmeticSequence.checked) {
+                solution = arithmeticSeqFunc(parseInt(firstNumber.value), parseInt(secondNumber.value), parseInt(thirdNumber.value));
+            }
+            if (euclidTriple.checked) {
+                solution = euclidTripleFunc(parseInt(firstNumber.value), parseInt(secondNumber.value));
+            }
 
-    console.log(solution);
-    if (solution != null && !isNaN(solution) || Array.isArray(solution)) {
-    historyList.unshift(solution);
-    displayHistory(historyList);
-    }
+            console.log(solution);
+            if (solution != null && !isNaN(solution) || Array.isArray(solution)) {
+                historyList.unshift(solution);
+                displayHistory(historyList);
+            }
 
-    return displayResult(solution);
-}
-
-// Functions for formulas
-function addNumbers() {
-    let solution = parseInt(firstNumber.value) + parseInt(secondNumber.value);
-    return solution;
-}
-
-function subNumbers() {
-    let solution = parseInt(firstNumber.value) - parseInt(secondNumber.value);
-    return solution;
-}
-
-function multiNumbers() {
-    let solution = parseInt(firstNumber.value) * parseInt(secondNumber.value);
-    return solution;
-}
-
-function divNumbers() {
-    let solution = parseInt(firstNumber.value) / parseInt(secondNumber.value);
-    return solution;
-}
-
-function factorialFunc(value) {
-
-    if (isNaN(value)) {
-        return value;
-    }
-
-    let solution = 1;
-    let number = value;
-    while (number > 0) {
-        solution *= number;
-        number--;
-    }
-    return solution;
-}
-
-function permutationFunc(valueA, valueB) {
-    let solution = Math.pow(valueA, valueB);
-    return solution;
-}
-
-function kPermutationNumbers(valueN, valueK) {
-    let top = factorialFunc(valueN);
-    let bottom = factorialFunc(valueN - valueK)
-    let solution = top / bottom
-    return solution;
-}
-
-function gcdFunc(valueA, valueB) {
-    let a = valueA;
-    let b = valueB;
-    if (b == 0) {
-        var solution = a;
-    }
-    if (a == 0) {
-        var solution = b
-    }
-    else {
-        while (b > 0) {
-            let remainder = valueA % valueB;
-            a = b;
-            b = remainder;
+            return displayResult(solution);
         }
-        var solution = a;
+
+        // Functions for formulas
+        function addNumbers() {
+            let solution = parseInt(firstNumber.value) + parseInt(secondNumber.value);
+            return solution;
+        }
+
+        function subNumbers() {
+            let solution = parseInt(firstNumber.value) - parseInt(secondNumber.value);
+            return solution;
+        }
+
+        function multiNumbers() {
+            let solution = parseInt(firstNumber.value) * parseInt(secondNumber.value);
+            return solution;
+        }
+
+        function divNumbers() {
+            let solution = parseInt(firstNumber.value) / parseInt(secondNumber.value);
+            return solution;
+        }
+
+        function factorialFunc(value) {
+
+            if (isNaN(value)) {
+                return value;
+            }
+
+            let solution = 1;
+            let number = value;
+            while (number > 0) {
+                solution *= number;
+                number--;
+            }
+            return solution;
+        }
+
+        function permutationFunc(valueA, valueB) {
+            let solution = Math.pow(valueA, valueB);
+            return solution;
+        }
+
+        function kPermutationNumbers(valueN, valueK) {
+            let top = factorialFunc(valueN);
+            let bottom = factorialFunc(valueN - valueK)
+            let solution = top / bottom
+            return solution;
+        }
+
+        function gcdFunc(valueA, valueB) {
+            let a = valueA;
+            let b = valueB;
+            if (b == 0) {
+                var solution = a;
+            }
+            if (a == 0) {
+                var solution = b
+            }
+            else {
+                while (b > 0) {
+                    let remainder = valueA % valueB;
+                    a = b;
+                    b = remainder;
+                }
+                var solution = a;
+            }
+            return solution;
+        }
+
+        function arithmeticSeriesFunc(valueA, valueB, valueN) {
+            let seriesNum = valueB - valueA;
+            let seriesCount = valueN - 2;
+            let start = valueB;
+            while (seriesCount > 0) {
+                start += seriesNum;
+                seriesCount--;
+            }
+            let solution = start;
+            return solution;
+        }
+
+        function arithmeticSeqFunc(valueA, valueB, valueN) {
+            let top = valueN * (valueA + valueB);
+            let solution = top / 2;
+            return solution;
+        }
+
+        function euclidTripleFunc(valueM, valueN) {
+            let solution = [];
+            let a = valueM * valueN;
+            let b = (Math.pow(valueM, 2) - Math.pow(valueN, 2)) / 2;
+            let c = (Math.pow(valueM, 2) + Math.pow(valueN, 2)) / 2;
+            solution.push(a, b, c);
+            return solution;
+        }
+
+        // Displays result
+        function displayResult(solution) {
+
+            let result = "Result is";
+            firstNumber.value = "";
+            secondNumber.value = "";
+            thirdNumber.value = "";
+            if (isNaN(solution) && (!Array.isArray(solution))) {
+                result = "";
+                solution = "Please Enter Valid Input(s)";
+            }
+            if (solution == null && (!Array.isArray(solution))) {
+                result = "";
+                solution = "Please Select A Formula";
+            }
+
+            return (document.getElementById("ans").textContent = result + " " + solution);
+        }
+
+        // List to store history
+        function displayHistory(historyList) {
+            return (document.getElementById("history").textContent = historyList);
+        }
+
+        firstNumber.value = "";
+        secondNumber.value = "";
+        thirdNumber.value = "";
+        return (document.getElementById("ans").textContent = "Result is " + solution);
     }
-    return solution;
 }
-
-function arithmeticSeriesFunc(valueA, valueB, valueN){
-    let seriesNum = valueB - valueA;
-    let seriesCount = valueN - 2;
-    let start = valueB;
-    while(seriesCount > 0){
-        start += seriesNum;
-        seriesCount--;
-    } 
-    let solution = start;
-    return solution;
-}
-
-function arithmeticSeqFunc(valueA, valueB, valueN){
-    let top = valueN * (valueA + valueB);
-    let solution = top / 2;
-    return solution;
-}
-
-function euclidTripleFunc(valueM, valueN){
-    let solution = [];
-    let a = valueM * valueN;
-    let b = (Math.pow(valueM, 2) - Math.pow(valueN, 2)) / 2;
-    let c = (Math.pow(valueM, 2) + Math.pow(valueN, 2)) / 2;
-    solution.push(a, b, c);
-    return solution;
-}
-
-// Displays result
-function displayResult(solution) {
-
-    let result = "Result is";
-    firstNumber.value = "";
-    secondNumber.value = "";
-    thirdNumber.value = "";
-    if (isNaN(solution) && (!Array.isArray(solution))) {
-        result = "";
-        solution = "Please Enter Valid Input(s)";
-    }
-    if (solution == null && (!Array.isArray(solution))) {
-        result = "";
-        solution = "Please Select A Formula";
-    }
-    
-    return (document.getElementById("ans").textContent = result + " " + solution);
-}
-
-// List to store history
-function displayHistory(historyList) {
-    return (document.getElementById("history").textContent = historyList);
-}
-
-    firstNumber.value = "";
-    secondNumber.value = "";
-    thirdNumber.value = "";
-    return (document.getElementById("ans").textContent = "Result is " + solution);
-}
-
-
